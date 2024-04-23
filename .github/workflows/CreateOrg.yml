@@ -1,0 +1,57 @@
+name: "ELTOROIT CICD Test Scratch Org"
+on: [push]
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        env:
+            ET_CICD: true
+        steps:
+            # Setup the Vitual Machine
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+            - name: Create etLogs folder
+              run: |
+                  mkdir -p etLogs
+            - name: Write sfdxUrl to a temp file
+              # sf org display --target-org <ORG_ALIAS> --verbose --json | jq .result.sfdxAuthUrl
+              # https://github.com/eltoroit/<REPO>/settings/secrets/actions/new
+              # Secret: echo ${{secrets.DEVHUB_TOKEN}} > $HOME/token.txt
+              # Variable: echo "${{vars.DEVHUB_TOKEN}}" > $HOME/token.txt
+              run: |
+                  echo "${{vars.DEVHUB_TOKEN}}" > $HOME/token.txt
+            - name: Install Salesforce tools
+              run: |
+                  wget https://developer.salesforce.com/media/salesforce-cli/sfdx/channels/stable/sfdx-linux-x64.tar.xz -q
+                  mkdir $HOME/sfdx-cli
+                  tar xJf sfdx-linux-x64.tar.xz -C $HOME/sfdx-cli --strip-components 1
+                  export PATH=$HOME/sfdx-cli/bin:$PATH
+                  echo "$PATH" >> $GITHUB_PATH
+                  echo "$PATH"
+                  sfdx update > etLogs/sfdx_update.out 2>etLogs/sfdx_update.err
+                  sfdx force:lightning:lwc:test:setup > etLogs/sfdx_lwcTestSetup.out 2>etLogs/sfdx_lwcTestSetup.err
+                  sfdx --version
+                  sf --version
+            - name: Install ETCopyData tools
+              run: |
+                  cd $HOME
+                  git clone https://github.com/eltoroit/ETCopyData.git
+                  cd ETCopyData
+                  npm install
+                  sfdx plugins:link
+            - name: Register DevHub
+              run: |
+                  sf org login sfdx-url --sfdx-url-file "$HOME/token.txt" --set-default-dev-hub --alias DevHub
+            - name: Create Scratch Org
+              run: |
+                  node ./@ELTOROIT/scripts/nodejs/orgBuilder.mjs --config-file=@ELTOROIT/scripts/nodejs/orgBuilder.jsonc
+            # Upload logs as artifacts
+            - name: Upload artifacts
+              uses: actions/upload-artifact@v3
+              if: always()
+              with:
+                  name: logs
+                  path: etLogs
+                  if-no-files-found: error
+                  retention-days: 90

@@ -1,0 +1,48 @@
+{
+	"settings": {
+		"days": 1,
+		"alias": "soDEMO",
+		"OpenBrowser": true,
+		"QuitOnErrors": false,
+		"UserOnScreen": false // Can I prompt the user for manual verification? On CICD, this should be false
+	},
+	"steps": [
+		// Prepare environment
+		"ValidateETCopyData",
+		"RunJestTests",
+		"BackupAlias", // In case you need to go back to the old org :-)
+
+		// Creating Scratch org
+		"CreateScratchOrg",
+		"CreateFinestDebugLevel",
+		"PauseToCheckOrg",
+		"ShowDeployPage",
+		{ "DeployMetadata": "./@ELTOROIT/metadata/API/" },
+		{ "ManualMetadata": "/lightning/setup/SalesforceMobileAppQuickStart/home" },
+		{ "ExecuteApex": "@ELTOROIT/scripts/apex/testApex_Good.apex" },
+		// FAILS ON DEMO -- { "InstallPackage": { "id": "04tB0000000P1yA", "key": "abcd1234" } },
+		// FAILS ON DEMO -- { "InstallPackage": { "id": "04tB0000000P1yA" } },
+
+		// Push metadata
+		"PushMetadata",
+		{ "DeployMetadata": "./@ELTOROIT/metadata/API/" },
+		{ "ManualMetadata": "/lightning/setup/SalesforceMobileAppQuickStart/home" },
+		{ "ExecuteApex": "@ELTOROIT/scripts/apex/SetUserRecord.apex" },
+		{ "AssignPermissionSet": "psTest" },
+		{ "DeployProfile": "force-apps/doNotDeploy/main/default/profiles/Admin.profile-meta.xml" },
+
+		// Loading Data
+		{ "ETCopyData": "./@ELTOROIT/data" },
+		{ "ExecuteApex": "@ELTOROIT/scripts/apex/testApex_Good.apex" },
+		"RunApexTests",
+		// FAILS ON DEMO -- { "PublishCommunity": "ABC" },
+		"GeneratePassword",
+
+		// CICD
+		// FAILS ON DEMO -- { "DeployToSandbox": { "alias": "sbDEMO-1", "folder": "./force-apps/deploy", "runTests": true } },
+		// FAILS ON DEMO -- { "DeployToSandbox": { "alias": "sbDEMO-2", "folder": "./force-apps/deploy", "runTests": true } },
+
+		// Print results
+		"ShowFinalSuccess"
+	]
+}
