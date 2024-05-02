@@ -3,8 +3,8 @@
 		"days": 1,
 		"alias": "soDEMO",
 		"OpenBrowser": true,
-		"QuitOnErrors": false,
-		"UserOnScreen": false // Can I prompt the user for manual verification? On CICD, this should be false
+		"QuitOnErrors": true,
+		"UserOnScreen": true // Can I prompt the user for manual verification? On CICD, this should be false
 	},
 	"steps": [
 		// Prepare environment
@@ -15,18 +15,18 @@
 		// Creating Scratch org
 		"CreateScratchOrg",
 		"CreateFinestDebugLevel",
-		"PauseToCheckOrg",
+		// "PauseToCheckOrg",
 		"ShowDeployPage",
-		{ "DeployMetadata": "./@ELTOROIT/metadata/API/" },
-		{ "ManualMetadata": "/lightning/setup/SalesforceMobileAppQuickStart/home" },
+		// { "DeployMetadata": "./@ELTOROIT/metadata/API/" },
+		// { "ManualMetadata": "/lightning/setup/SalesforceMobileAppQuickStart/home" },
 		{ "ExecuteApex": "@ELTOROIT/scripts/apex/testApex_Good.apex" },
 		// FAILS ON DEMO -- { "InstallPackage": { "id": "04tB0000000P1yA", "key": "abcd1234" } },
 		// FAILS ON DEMO -- { "InstallPackage": { "id": "04tB0000000P1yA" } },
 
 		// Push metadata
 		"PushMetadata",
-		{ "DeployMetadata": "./@ELTOROIT/metadata/API/" },
-		{ "ManualMetadata": "/lightning/setup/SalesforceMobileAppQuickStart/home" },
+		// { "DeployMetadata": "./@ELTOROIT/metadata/API/" },
+		// { "ManualMetadata": "/lightning/setup/SalesforceMobileAppQuickStart/home" },
 		{ "ExecuteApex": "@ELTOROIT/scripts/apex/SetUserRecord.apex" },
 		{ "AssignPermissionSet": "psTest" },
 		{ "DeployProfile": "force-apps/doNotDeploy/main/default/profiles/Admin.profile-meta.xml" },
