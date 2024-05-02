@@ -6,8 +6,4 @@
     </applicationVisibilities>
     <hasActivationRequired>false</hasActivationRequired>
     <label>psTest</label>
-    <tabSettings>
-        <tab>Counter</tab>
-        <visibility>Visible</visibility>
-    </tabSettings>
 </PermissionSet>

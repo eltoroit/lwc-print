@@ -1,0 +1,5 @@
+@media print {
+    .pdfSlot>article.slds-card {
+        border: none;
+    }
+}

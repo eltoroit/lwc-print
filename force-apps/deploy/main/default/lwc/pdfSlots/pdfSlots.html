@@ -1,0 +1,9 @@
+<template>
+    <lightning-card class="pdfSlot">
+        <div slot="actions" lwc:if={notPrinting}>
+            <lightning-button label="Print" onclick={handlePrintClick}></lightning-button>
+            <slot name="pdfActions"></slot>
+        </div>
+        <slot></slot>
+    </lightning-card>
+</template>

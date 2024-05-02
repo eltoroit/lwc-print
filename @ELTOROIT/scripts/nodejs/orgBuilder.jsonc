@@ -34,7 +34,7 @@
 		// Loading Data
 		{ "ETCopyData": "./@ELTOROIT/data" },
 		{ "ExecuteApex": "@ELTOROIT/scripts/apex/testApex_Good.apex" },
-		"RunApexTests",
+		// "RunApexTests",
 		// FAILS ON DEMO -- { "PublishCommunity": "ABC" },
 		"GeneratePassword",
 

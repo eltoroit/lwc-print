@@ -1,3 +1,5 @@
 <aura:application extends="force:slds">
-    <c:pdfContent recordId="001Ow000006omr0IAA" onprintready="{!c.handlePrintReady}"></c:pdfContent>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="pdfData" type="String" default="visible" />
+    {!v.body}
 </aura:application>

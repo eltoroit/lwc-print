@@ -2003,6 +2003,79 @@
 			"Campaign.CampaignMemberRecordTypeId": [
 				"Parent sObject [RecordType] is not processed"
 			],
+			"Lead.IsDeleted": [
+				"Must be createable"
+			],
+			"Lead.MasterRecordId": [
+				"Must be createable",
+				"Recursive parenting for field references is supported, but requires the field to be configured as twoPassReferenceField"
+			],
+			"Lead.Name": [
+				"Must be createable"
+			],
+			"Lead.Address": [
+				"Must be createable"
+			],
+			"Lead.PhotoUrl": [
+				"Must be createable"
+			],
+			"Lead.OwnerId": [
+				"User asked for this field to be excluded",
+				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
+			],
+			"Lead.ConvertedDate": [
+				"Must be createable"
+			],
+			"Lead.ConvertedAccountId": [
+				"Must be createable"
+			],
+			"Lead.ConvertedContactId": [
+				"Must be createable"
+			],
+			"Lead.ConvertedOpportunityId": [
+				"Must be createable"
+			],
+			"Lead.CreatedDate": [
+				"Must be createable"
+			],
+			"Lead.CreatedById": [
+				"Must be createable",
+				"Parent sObject [User] is not processed"
+			],
+			"Lead.LastModifiedDate": [
+				"Must be createable"
+			],
+			"Lead.LastModifiedById": [
+				"Must be createable",
+				"Parent sObject [User] is not processed"
+			],
+			"Lead.SystemModstamp": [
+				"Must be createable"
+			],
+			"Lead.LastActivityDate": [
+				"Must be createable"
+			],
+			"Lead.LastViewedDate": [
+				"Must be createable"
+			],
+			"Lead.LastReferencedDate": [
+				"Must be createable"
+			],
+			"Lead.JigsawContactId": [
+				"Must be createable"
+			],
+			"Lead.DandbCompanyId": [
+				"Parent sObject [DandBCompany] is not processed"
+			],
+			"Lead.EmailBouncedReason": [
+				"Must be createable"
+			],
+			"Lead.EmailBouncedDate": [
+				"Must be createable"
+			],
+			"Lead.IndividualId": [
+				"Parent sObject [Individual] is not processed"
+			],
 			"Opportunity.IsDeleted": [
 				"Must be createable"
 			],
@@ -2144,79 +2217,6 @@
 			],
 			"Case.LastReferencedDate": [
 				"Must be createable"
-			],
-			"Lead.IsDeleted": [
-				"Must be createable"
-			],
-			"Lead.MasterRecordId": [
-				"Must be createable",
-				"Recursive parenting for field references is supported, but requires the field to be configured as twoPassReferenceField"
-			],
-			"Lead.Name": [
-				"Must be createable"
-			],
-			"Lead.Address": [
-				"Must be createable"
-			],
-			"Lead.PhotoUrl": [
-				"Must be createable"
-			],
-			"Lead.OwnerId": [
-				"User asked for this field to be excluded",
-				"Reference, but it points to 0 or more than 1 sObject: | Group | User | "
-			],
-			"Lead.ConvertedDate": [
-				"Must be createable"
-			],
-			"Lead.ConvertedAccountId": [
-				"Must be createable"
-			],
-			"Lead.ConvertedContactId": [
-				"Must be createable"
-			],
-			"Lead.ConvertedOpportunityId": [
-				"Must be createable"
-			],
-			"Lead.CreatedDate": [
-				"Must be createable"
-			],
-			"Lead.CreatedById": [
-				"Must be createable",
-				"Parent sObject [User] is not processed"
-			],
-			"Lead.LastModifiedDate": [
-				"Must be createable"
-			],
-			"Lead.LastModifiedById": [
-				"Must be createable",
-				"Parent sObject [User] is not processed"
-			],
-			"Lead.SystemModstamp": [
-				"Must be createable"
-			],
-			"Lead.LastActivityDate": [
-				"Must be createable"
-			],
-			"Lead.LastViewedDate": [
-				"Must be createable"
-			],
-			"Lead.LastReferencedDate": [
-				"Must be createable"
-			],
-			"Lead.JigsawContactId": [
-				"Must be createable"
-			],
-			"Lead.DandbCompanyId": [
-				"Parent sObject [DandBCompany] is not processed"
-			],
-			"Lead.EmailBouncedReason": [
-				"Must be createable"
-			],
-			"Lead.EmailBouncedDate": [
-				"Must be createable"
-			],
-			"Lead.IndividualId": [
-				"Parent sObject [Individual] is not processed"
 			],
 			"Contact.IsDeleted": [
 				"Must be createable"
@@ -2600,6 +2600,192 @@
 			"Campaign.UserDefinedLabelAssignments => UserDefinedLabelAssignment": [
 				"Child sObject [UserDefinedLabelAssignment] is not processed"
 			],
+			"Lead.null => AIInsightValue": [
+				"Child sObject [AIInsightValue] is not processed"
+			],
+			"Lead.null => AIRecordInsight": [
+				"Child sObject [AIRecordInsight] is not processed"
+			],
+			"Lead.AcceptedEventRelations => AcceptedEventRelation": [
+				"Child sObject [AcceptedEventRelation] is not processed"
+			],
+			"Lead.ActivityHistories => ActivityHistory": [
+				"Child sObject [ActivityHistory] is not processed"
+			],
+			"Lead.AttachedContentDocuments => AttachedContentDocument": [
+				"Child sObject [AttachedContentDocument] is not processed"
+			],
+			"Lead.Attachments => Attachment": [
+				"Child sObject [Attachment] is not processed"
+			],
+			"Lead.AuthorizationFormConsents => AuthorizationFormConsent": [
+				"Child sObject [AuthorizationFormConsent] is not processed"
+			],
+			"Lead.null => AuthorizationFormConsentChangeEvent": [
+				"Child sObject [AuthorizationFormConsentChangeEvent] is not processed"
+			],
+			"Lead.CampaignMembers => CampaignMember": [
+				"Child sObject [CampaignMember] is not processed"
+			],
+			"Lead.null => CampaignMember": [
+				"Child sObject [CampaignMember] is not processed"
+			],
+			"Lead.null => CampaignMemberChangeEvent": [
+				"Child sObject [CampaignMemberChangeEvent] is not processed"
+			],
+			"Lead.RecordAssociatedGroups => CollaborationGroupRecord": [
+				"Child sObject [CollaborationGroupRecord] is not processed"
+			],
+			"Lead.CombinedAttachments => CombinedAttachment": [
+				"Child sObject [CombinedAttachment] is not processed"
+			],
+			"Lead.ContactRequests => ContactRequest": [
+				"Child sObject [ContactRequest] is not processed"
+			],
+			"Lead.null => ContentDistribution": [
+				"Child sObject [ContentDistribution] is not processed"
+			],
+			"Lead.ContentDocumentLinks => ContentDocumentLink": [
+				"Child sObject [ContentDocumentLink] is not processed"
+			],
+			"Lead.null => ContentDocumentLinkChangeEvent": [
+				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
+			],
+			"Lead.null => ContentVersion": [
+				"Child sObject [ContentVersion] is not processed"
+			],
+			"Lead.null => ContentVersionChangeEvent": [
+				"Child sObject [ContentVersionChangeEvent] is not processed"
+			],
+			"Lead.DeclinedEventRelations => DeclinedEventRelation": [
+				"Child sObject [DeclinedEventRelation] is not processed"
+			],
+			"Lead.DuplicateRecordItems => DuplicateRecordItem": [
+				"Child sObject [DuplicateRecordItem] is not processed"
+			],
+			"Lead.null => EmailBounceEvent": [
+				"Child sObject [EmailBounceEvent] is not processed"
+			],
+			"Lead.null => EmailMessage": [
+				"Child sObject [EmailMessage] is not processed"
+			],
+			"Lead.EmailMessageRelations => EmailMessageRelation": [
+				"Child sObject [EmailMessageRelation] is not processed"
+			],
+			"Lead.EmailStatuses => EmailStatus": [
+				"Child sObject [EmailStatus] is not processed"
+			],
+			"Lead.FeedSubscriptionsForEntity => EntitySubscription": [
+				"Child sObject [EntitySubscription] is not processed"
+			],
+			"Lead.Events => Event": [
+				"Child sObject [Event] is not processed"
+			],
+			"Lead.null => EventChangeEvent": [
+				"Child sObject [EventChangeEvent] is not processed"
+			],
+			"Lead.EventRelations => EventRelation": [
+				"Child sObject [EventRelation] is not processed"
+			],
+			"Lead.null => EventRelationChangeEvent": [
+				"Child sObject [EventRelationChangeEvent] is not processed"
+			],
+			"Lead.null => FeedComment": [
+				"Child sObject [FeedComment] is not processed"
+			],
+			"Lead.null => FeedItem": [
+				"Child sObject [FeedItem] is not processed"
+			],
+			"Lead.null => FlowExecutionErrorEvent": [
+				"Child sObject [FlowExecutionErrorEvent] is not processed"
+			],
+			"Lead.FlowOrchestrationWorkItems => FlowOrchestrationWorkItem": [
+				"Child sObject [FlowOrchestrationWorkItem] is not processed"
+			],
+			"Lead.null => FlowRecordRelation": [
+				"Child sObject [FlowRecordRelation] is not processed"
+			],
+			"Lead.LeadCleanInfos => LeadCleanInfo": [
+				"Child sObject [LeadCleanInfo] is not processed"
+			],
+			"Lead.Feeds => LeadFeed": [
+				"Child sObject [LeadFeed] is not processed"
+			],
+			"Lead.Histories => LeadHistory": [
+				"Child sObject [LeadHistory] is not processed"
+			],
+			"Lead.Shares => LeadShare": [
+				"Child sObject [LeadShare] is not processed"
+			],
+			"Lead.ListEmails => ListEmail": [
+				"Child sObject [ListEmail] is not processed"
+			],
+			"Lead.null => ListEmailChangeEvent": [
+				"Child sObject [ListEmailChangeEvent] is not processed"
+			],
+			"Lead.ListEmailIndividualRecipients => ListEmailIndividualRecipient": [
+				"Child sObject [ListEmailIndividualRecipient] is not processed"
+			],
+			"Lead.MessagingEndUsers => MessagingEndUser": [
+				"Child sObject [MessagingEndUser] is not processed"
+			],
+			"Lead.MessagingSessions => MessagingSession": [
+				"Child sObject [MessagingSession] is not processed"
+			],
+			"Lead.Notes => Note": [
+				"Child sObject [Note] is not processed"
+			],
+			"Lead.NotesAndAttachments => NoteAndAttachment": [
+				"Child sObject [NoteAndAttachment] is not processed"
+			],
+			"Lead.OpenActivities => OpenActivity": [
+				"Child sObject [OpenActivity] is not processed"
+			],
+			"Lead.null => OutgoingEmail": [
+				"Child sObject [OutgoingEmail] is not processed"
+			],
+			"Lead.OutgoingEmailRelations => OutgoingEmailRelation": [
+				"Child sObject [OutgoingEmailRelation] is not processed"
+			],
+			"Lead.ProcessInstances => ProcessInstance": [
+				"Child sObject [ProcessInstance] is not processed"
+			],
+			"Lead.null => ProcessInstanceChangeEvent": [
+				"Child sObject [ProcessInstanceChangeEvent] is not processed"
+			],
+			"Lead.ProcessSteps => ProcessInstanceHistory": [
+				"Child sObject [ProcessInstanceHistory] is not processed"
+			],
+			"Lead.RecordActions => RecordAction": [
+				"Child sObject [RecordAction] is not processed"
+			],
+			"Lead.RecordActionHistories => RecordActionHistory": [
+				"Child sObject [RecordActionHistory] is not processed"
+			],
+			"Lead.ServiceAppointments => ServiceAppointment": [
+				"Child sObject [ServiceAppointment] is not processed"
+			],
+			"Lead.null => ServiceAppointmentChangeEvent": [
+				"Child sObject [ServiceAppointmentChangeEvent] is not processed"
+			],
+			"Lead.Tasks => Task": [
+				"Child sObject [Task] is not processed"
+			],
+			"Lead.null => TaskChangeEvent": [
+				"Child sObject [TaskChangeEvent] is not processed"
+			],
+			"Lead.TopicAssignments => TopicAssignment": [
+				"Child sObject [TopicAssignment] is not processed"
+			],
+			"Lead.UndecidedEventRelations => UndecidedEventRelation": [
+				"Child sObject [UndecidedEventRelation] is not processed"
+			],
+			"Lead.UserDefinedLabelAssignments => UserDefinedLabelAssignment": [
+				"Child sObject [UserDefinedLabelAssignment] is not processed"
+			],
+			"Lead.PersonRecord => UserEmailPreferredPerson": [
+				"Child sObject [UserEmailPreferredPerson] is not processed"
+			],
 			"Opportunity.null => AIInsightValue": [
 				"Child sObject [AIInsightValue] is not processed"
 			],
@@ -2965,192 +3151,6 @@
 			],
 			"Case.null => WorkOrderChangeEvent": [
 				"Child sObject [WorkOrderChangeEvent] is not processed"
-			],
-			"Lead.null => AIInsightValue": [
-				"Child sObject [AIInsightValue] is not processed"
-			],
-			"Lead.null => AIRecordInsight": [
-				"Child sObject [AIRecordInsight] is not processed"
-			],
-			"Lead.AcceptedEventRelations => AcceptedEventRelation": [
-				"Child sObject [AcceptedEventRelation] is not processed"
-			],
-			"Lead.ActivityHistories => ActivityHistory": [
-				"Child sObject [ActivityHistory] is not processed"
-			],
-			"Lead.AttachedContentDocuments => AttachedContentDocument": [
-				"Child sObject [AttachedContentDocument] is not processed"
-			],
-			"Lead.Attachments => Attachment": [
-				"Child sObject [Attachment] is not processed"
-			],
-			"Lead.AuthorizationFormConsents => AuthorizationFormConsent": [
-				"Child sObject [AuthorizationFormConsent] is not processed"
-			],
-			"Lead.null => AuthorizationFormConsentChangeEvent": [
-				"Child sObject [AuthorizationFormConsentChangeEvent] is not processed"
-			],
-			"Lead.CampaignMembers => CampaignMember": [
-				"Child sObject [CampaignMember] is not processed"
-			],
-			"Lead.null => CampaignMember": [
-				"Child sObject [CampaignMember] is not processed"
-			],
-			"Lead.null => CampaignMemberChangeEvent": [
-				"Child sObject [CampaignMemberChangeEvent] is not processed"
-			],
-			"Lead.RecordAssociatedGroups => CollaborationGroupRecord": [
-				"Child sObject [CollaborationGroupRecord] is not processed"
-			],
-			"Lead.CombinedAttachments => CombinedAttachment": [
-				"Child sObject [CombinedAttachment] is not processed"
-			],
-			"Lead.ContactRequests => ContactRequest": [
-				"Child sObject [ContactRequest] is not processed"
-			],
-			"Lead.null => ContentDistribution": [
-				"Child sObject [ContentDistribution] is not processed"
-			],
-			"Lead.ContentDocumentLinks => ContentDocumentLink": [
-				"Child sObject [ContentDocumentLink] is not processed"
-			],
-			"Lead.null => ContentDocumentLinkChangeEvent": [
-				"Child sObject [ContentDocumentLinkChangeEvent] is not processed"
-			],
-			"Lead.null => ContentVersion": [
-				"Child sObject [ContentVersion] is not processed"
-			],
-			"Lead.null => ContentVersionChangeEvent": [
-				"Child sObject [ContentVersionChangeEvent] is not processed"
-			],
-			"Lead.DeclinedEventRelations => DeclinedEventRelation": [
-				"Child sObject [DeclinedEventRelation] is not processed"
-			],
-			"Lead.DuplicateRecordItems => DuplicateRecordItem": [
-				"Child sObject [DuplicateRecordItem] is not processed"
-			],
-			"Lead.null => EmailBounceEvent": [
-				"Child sObject [EmailBounceEvent] is not processed"
-			],
-			"Lead.null => EmailMessage": [
-				"Child sObject [EmailMessage] is not processed"
-			],
-			"Lead.EmailMessageRelations => EmailMessageRelation": [
-				"Child sObject [EmailMessageRelation] is not processed"
-			],
-			"Lead.EmailStatuses => EmailStatus": [
-				"Child sObject [EmailStatus] is not processed"
-			],
-			"Lead.FeedSubscriptionsForEntity => EntitySubscription": [
-				"Child sObject [EntitySubscription] is not processed"
-			],
-			"Lead.Events => Event": [
-				"Child sObject [Event] is not processed"
-			],
-			"Lead.null => EventChangeEvent": [
-				"Child sObject [EventChangeEvent] is not processed"
-			],
-			"Lead.EventRelations => EventRelation": [
-				"Child sObject [EventRelation] is not processed"
-			],
-			"Lead.null => EventRelationChangeEvent": [
-				"Child sObject [EventRelationChangeEvent] is not processed"
-			],
-			"Lead.null => FeedComment": [
-				"Child sObject [FeedComment] is not processed"
-			],
-			"Lead.null => FeedItem": [
-				"Child sObject [FeedItem] is not processed"
-			],
-			"Lead.null => FlowExecutionErrorEvent": [
-				"Child sObject [FlowExecutionErrorEvent] is not processed"
-			],
-			"Lead.FlowOrchestrationWorkItems => FlowOrchestrationWorkItem": [
-				"Child sObject [FlowOrchestrationWorkItem] is not processed"
-			],
-			"Lead.null => FlowRecordRelation": [
-				"Child sObject [FlowRecordRelation] is not processed"
-			],
-			"Lead.LeadCleanInfos => LeadCleanInfo": [
-				"Child sObject [LeadCleanInfo] is not processed"
-			],
-			"Lead.Feeds => LeadFeed": [
-				"Child sObject [LeadFeed] is not processed"
-			],
-			"Lead.Histories => LeadHistory": [
-				"Child sObject [LeadHistory] is not processed"
-			],
-			"Lead.Shares => LeadShare": [
-				"Child sObject [LeadShare] is not processed"
-			],
-			"Lead.ListEmails => ListEmail": [
-				"Child sObject [ListEmail] is not processed"
-			],
-			"Lead.null => ListEmailChangeEvent": [
-				"Child sObject [ListEmailChangeEvent] is not processed"
-			],
-			"Lead.ListEmailIndividualRecipients => ListEmailIndividualRecipient": [
-				"Child sObject [ListEmailIndividualRecipient] is not processed"
-			],
-			"Lead.MessagingEndUsers => MessagingEndUser": [
-				"Child sObject [MessagingEndUser] is not processed"
-			],
-			"Lead.MessagingSessions => MessagingSession": [
-				"Child sObject [MessagingSession] is not processed"
-			],
-			"Lead.Notes => Note": [
-				"Child sObject [Note] is not processed"
-			],
-			"Lead.NotesAndAttachments => NoteAndAttachment": [
-				"Child sObject [NoteAndAttachment] is not processed"
-			],
-			"Lead.OpenActivities => OpenActivity": [
-				"Child sObject [OpenActivity] is not processed"
-			],
-			"Lead.null => OutgoingEmail": [
-				"Child sObject [OutgoingEmail] is not processed"
-			],
-			"Lead.OutgoingEmailRelations => OutgoingEmailRelation": [
-				"Child sObject [OutgoingEmailRelation] is not processed"
-			],
-			"Lead.ProcessInstances => ProcessInstance": [
-				"Child sObject [ProcessInstance] is not processed"
-			],
-			"Lead.null => ProcessInstanceChangeEvent": [
-				"Child sObject [ProcessInstanceChangeEvent] is not processed"
-			],
-			"Lead.ProcessSteps => ProcessInstanceHistory": [
-				"Child sObject [ProcessInstanceHistory] is not processed"
-			],
-			"Lead.RecordActions => RecordAction": [
-				"Child sObject [RecordAction] is not processed"
-			],
-			"Lead.RecordActionHistories => RecordActionHistory": [
-				"Child sObject [RecordActionHistory] is not processed"
-			],
-			"Lead.ServiceAppointments => ServiceAppointment": [
-				"Child sObject [ServiceAppointment] is not processed"
-			],
-			"Lead.null => ServiceAppointmentChangeEvent": [
-				"Child sObject [ServiceAppointmentChangeEvent] is not processed"
-			],
-			"Lead.Tasks => Task": [
-				"Child sObject [Task] is not processed"
-			],
-			"Lead.null => TaskChangeEvent": [
-				"Child sObject [TaskChangeEvent] is not processed"
-			],
-			"Lead.TopicAssignments => TopicAssignment": [
-				"Child sObject [TopicAssignment] is not processed"
-			],
-			"Lead.UndecidedEventRelations => UndecidedEventRelation": [
-				"Child sObject [UndecidedEventRelation] is not processed"
-			],
-			"Lead.UserDefinedLabelAssignments => UserDefinedLabelAssignment": [
-				"Child sObject [UserDefinedLabelAssignment] is not processed"
-			],
-			"Lead.PersonRecord => UserEmailPreferredPerson": [
-				"Child sObject [UserEmailPreferredPerson] is not processed"
 			],
 			"Contact.null => AIInsightValue": [
 				"Child sObject [AIInsightValue] is not processed"

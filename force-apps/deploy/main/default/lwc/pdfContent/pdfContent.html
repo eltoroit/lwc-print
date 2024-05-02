@@ -1,13 +1,11 @@
 <template>
-    <div class="slds-p-horizontal_xx-small">
-        Account Name: {Account.Name}<br />
-        Contacts:
-        <ul class="slds-list_dotted">
-            <template for:each={Account.Contacts} for:item="ct">
-                <li key={ct.Id}>
-                    {ct.Name}<br />
-                </li>
-            </template>
-        </ul>
-    </div>
+    <c-pdf-slots pdf-data={pdfData}>
+        <div class="slds-p-horizontal_xx-small">
+            Account Name: {account.Name}<br />
+            Contacts:
+            <lightning-datatable key-field="Id" data={contacts} columns={columns} sorted-by={sortBy}
+                sorted-direction={sortDirection} onsort={handleSort} hide-checkbox-column="true">
+            </lightning-datatable>
+        </div>
+    </c-pdf-slots>
 </template>
