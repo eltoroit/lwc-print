@@ -164,9 +164,11 @@ export default class SFDX {
 		const createNewOrg = async () => {
 			const { stepNumber, stepMethod } = this.getStepId({ config, offset: 1 });
 			config.currentStep = `${stepNumber}. ${stepMethod} (Create new org)`;
-			command = `sf org create scratch --definition-file="config/project-scratch-def.json" --set-default --alias="${config.settings.alias}" --duration-days="${config.settings.days}" --wait=600 --json`;
+			command = `sf org create scratch --definition-file="config/project-scratch-def.json" --set-default --alias="${config.settings.alias}" --duration-days="${config.settings.days}" --wait=600`;
 			logFile = `${stepNumber}_${stepMethod}.json`;
+			config.printData = true;
 			await this._runSFDX({ config, command, logFile });
+			config.printData = false;
 		};
 
 		const setAsDefault = async () => {
