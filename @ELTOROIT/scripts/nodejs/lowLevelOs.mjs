@@ -165,6 +165,19 @@ export default class LowLevelOS {
 				}
 			};
 
+			const printData = ({ eventName, data }) => {
+				if (config.printData) {
+					let data2 = data.toString();
+					let data3 = data2.split('\n');
+					let data4 = data3.filter((line) => line.trim().length > 0);
+					console.log(data4.join('\n'));
+					if (data4.length > 1) {
+						// console.log(`\n--- ${eventName} ---\n`);
+						console.log('--- --- --- --- --- --- --- --- ---\n');
+					}
+				}
+			};
+
 			const execProcess = spawn(app, args, { detach: true, shell: true, cwd });
 			execProcess.on('spawn', (...data) => {
 				if (config.debugMessages) {
@@ -177,10 +190,12 @@ export default class LowLevelOS {
 			});
 
 			execProcess.stdout.on('data', (...data) => {
+				printData({ eventName: 'STDOUT', data });
 				report({ eventName: 'STDOUT', data });
 			});
 
 			execProcess.stderr.on('data', (...data) => {
+				printData({ eventName: 'STDERR', data });
 				report({ eventName: 'STDERR', data });
 			});
 
